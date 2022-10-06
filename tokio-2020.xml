@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jjoo edicio="2020">
+    <pais_juegos>Japan</pais_juegos>
+    <web>https://olympics.com/tokyo-2020/es/</web>
+    <participantes>
+        <pais nombre="Spain">
+            <deportistas>
+                <deportista>Fatima Galvez</deportista>
+                <deportista>Sandra Sanchez Jaime</deportista>
+                <deportista>Alberto GINÉS LÓPEZ</deportista>
+            </deportistas>
+        </pais>
+        <pais nombre="Argentina">
+            <deportistas>
+                <deportista>Maria Granatto</deportista>
+                <deportista>Rodrigo Etchart</deportista>
+                <deportista>Julieta Jankunas</deportista>
+                <deportista>Eugenia Trinchinetti</deportista>
+            </deportistas>
+        </pais>
+        <pais>
+            <deportistas>
+                <deportista>Daiki Hashimoto</deportista>
+                <deportista>Uta Abe</deportista>
+                <deportista>Hifumi Abe</deportista>
+                <deportista>Takanori Nagase</deportista>
+            </deportistas>
+        </pais>
+    </participantes>
+    <fecha_apertura fecha="23/07/2021"></fecha_apertura>
+    <fecha_clausura fecha="08/08/2021"></fecha_clausura>
+    <sedes tipo="eventos">
+        <sede nombre="Villa Olimpica">
+            <ciudad_ubicacion>Tokio</ciudad_ubicacion>
+            <edificio>
+                <descripcion>Villa donde residen los atletas y personal durante los juegos</descripcion>
+            </edificio>
+            <funcionalidad></funcionalidad>
+        </sede>
+    </sedes>
+    <sedes tipo="Competicion">
+
+    </sedes>
+
+</jjoo>

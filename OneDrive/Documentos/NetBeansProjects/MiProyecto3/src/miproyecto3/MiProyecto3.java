@@ -15,6 +15,7 @@ public class MiProyecto3 {
      */
     public static void main(String[] args) {
         System.out.println("Hola aplicació");
+        System.out.println("CANVI");
     }
     
 }

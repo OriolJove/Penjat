@@ -1,2 +1,0 @@
-# jocs_olimpics
-

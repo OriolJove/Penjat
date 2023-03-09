@@ -4,12 +4,14 @@
  */
 package penjat;
 
+import java.util.Scanner;
+
 /**
  *
  * @author orjon
  */
 public class Penjat {
-
+public static Scanner sc = new Scanner(System.in);
 public static void main(String[] args) {
         
        final char[][] estatPenjatInicial =
@@ -100,6 +102,7 @@ public static void main(String[] args) {
     
     static void mostrarParaula(String paraula, boolean[] encertades) {
         
+        
     }
     
     static void mostrarLletresIntroduides(String lletres) {
@@ -107,6 +110,8 @@ public static void main(String[] args) {
     }
     
     static String demanarLletra(String lletres) {
+        System.out.println("Introdueix lletra: ");
+        lletres = sc.nextLine();
         
         return null;
     

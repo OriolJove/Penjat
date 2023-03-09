@@ -102,6 +102,7 @@ public static void main(String[] args) {
     
     static void mostrarParaula(String paraula, boolean[] encertades) {
         
+        System.out.println("Paraula: " + paraula);
         
     }
     
@@ -112,8 +113,8 @@ public static void main(String[] args) {
     static String demanarLletra(String lletres) {
         System.out.println("Introdueix lletra: ");
         lletres = sc.nextLine();
-        
-        return null;
+               
+        return lletres;
     
     }
     

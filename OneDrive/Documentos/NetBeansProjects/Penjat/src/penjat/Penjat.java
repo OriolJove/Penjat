@@ -123,11 +123,8 @@ public static void main(String[] args) {
     }
     
     static String demanarLletra(String lletres) {
-        System.out.println("Introdueix lletra: ");
-        lletres = sc.nextLine();
-               
-        return lletres;
-    
+        String lletraDemanada = sc.nextLine();
+        return lletraDemanada;      
     }
     
     static boolean existeixLletra(String lletres, char lletra) {

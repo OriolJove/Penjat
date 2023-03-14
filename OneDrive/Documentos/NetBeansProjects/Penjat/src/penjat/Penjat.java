@@ -119,6 +119,14 @@ public static void main(String[] args) {
             System.out.println("Enhorabona, has guanyat! La paraula era: " + paraula);
         }
     }
+ static void mostrarEstatPenjat(char[][] estat) {
+        for (char[] fila : estat) {
+            for (char valor : fila) {
+                System.out.print(valor);
+            }
+            System.out.println("");
+        }
+    }
     
     static void inicialitzarEstatPenjat(char[][] estatPenjatIni, char[][] estat) {
     

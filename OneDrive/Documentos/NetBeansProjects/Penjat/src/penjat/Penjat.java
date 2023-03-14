@@ -128,13 +128,45 @@ public static void main(String[] args) {
     }
     
     static boolean existeixLletra(String lletres, char lletra) {
-        
-        return true;
+        boolean estaLletra = false;
+        for (int i = 0; i < lletres.length(); i++){
+            if (lletres.charAt(i) == Character.toLowerCase(lletra)){
+                estaLletra = true;
+            }
+        }
+        return estaLletra;
     
     }
     
     static void actualitzarEstatPenjat(char[][] penjat,int errors) {
-        
+         int fila = 1;
+        int columna = 8;
+        switch (errors){
+            case 1:
+                penjat[fila][columna] = '|';
+                break;
+            case 2:
+                penjat[fila+1][columna] = 'o';
+                break;
+            case 3:
+                penjat[fila+2][columna] = '|';
+                break;
+            case 4:
+                penjat[fila+2][columna-1] = '/';
+                break;
+            case 5:
+                penjat[fila+2][columna+1] = '\\';
+                break;
+            case 6:
+                penjat[fila+3][columna] = '|';
+                break;
+            case 7:
+                penjat[fila+4][columna-1] = '/';
+                break;  
+            case 8:
+                penjat[fila+4][columna+1] = '\\';
+                break;
+        }
     }
     
     static void netejaPantalla() {

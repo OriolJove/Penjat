@@ -42,53 +42,82 @@ public static void main(String[] args) {
                             "tramvia","trapezi","tricicle","violeta"};
         
         
-        final int MAXINTENTS = 7;
-        
-            
-            // Estat gràfic del joc durant la partida
-            char[][] estatPenjat = 
-              new char[estatPenjatInicial.length][estatPenjatInicial[0].length];
-            
-            
-            // Inicialitzar el dibuix del penjat
-            inicialitzarEstatPenjat(estatPenjatInicial,estatPenjat);
-            
-            
+        final int MAXINTENTS = 8;
+       
+        // Estat gràfic del joc durant la partida
+        char[][] estatPenjat =
+        new char[estatPenjatInicial.length][estatPenjatInicial[0].length];
+           
+           
+        // Inicialitzar el dibuix del penjat
+        inicialitzarEstatPenjat(estatPenjatInicial,estatPenjat);
+           
+           
+        //mostrarEstatPenjat(estatPenjat);
+           
+        // Seleccionar la paraula aleatòriament
+        int index = (int)(Math.random()*paraules.length);
+        String paraula = paraules[index];
+             
+        int totalEncerts = 0;
+        int totalErrors = 0;
+           
+        // Estructra de dades (array) per saber quines lletres portem
+        //encertades            
+        boolean[] lletresEncertades = new boolean[paraula.length()];
+           
+        // Llistat de lletres que hem introduït
+        String lletres = "";
+        do {
             mostrarEstatPenjat(estatPenjat);
-            
-            // Seleccionar la paraula aleatòriament
-            int index = (int)(Math.random()*paraules.length);
-            String paraula = paraules[index];
-            // Eliminar aquesta línia quan el joc estigui completat
-            paraula = "patata";
-            
-            
-            int totalEncerts = 0,totalErrors = 0;
-            
-            // Estructra de dades (array) per saber quines lletres portem 
-            //encertades            
-            boolean[] lletresEncertades = new boolean[paraula.length()];
-            
-            // Llistat de lletres que hem introduït
-            String lletres = "";
-            
-            do {
-            
-                
-            } while(totalEncerts < paraula.length() && totalErrors < MAXINTENTS);
-        
-    }
-    
-    
-    static void mostrarEstatPenjat(char[][] estat) {
-        
-        for (char[] fila : estat) {
-            for (char valor : fila) {
-                System.out.print(valor);
+            System.out.print("Paraula: ");
+            mostrarParaula(paraula,lletresEncertades);
+           
+            System.out.print("Lletres: ");
+            mostrarLletresIntroduides(lletres);
+           
+            char lletra = ' ';
+            boolean existeix = false;
+            while (!existeix){
+                System.out.print("Introdueix lletra:");
+                lletra = demanarLletra(lletres).charAt(0);
+                if (existeixLletra(lletres, Character.toLowerCase(lletra))){
+                    existeix = false;
+                }
+                else {
+                    lletres += Character.toLowerCase(lletra);
+                    existeix = true;
+                }
+            }
+           
+            boolean esEncert = false;
+            for (int i = 0; i < paraula.length(); i++) {
+                if (Character.toLowerCase(lletra) == paraula.charAt(i)) {
+                    lletresEncertades[i] = true;
+                    esEncert = true;
+                    totalEncerts++;
+                }
+            }
+            if (!esEncert){
+                totalErrors++;
             }
             System.out.println("");
+            actualitzarEstatPenjat(estatPenjat, totalErrors);
+            netejaPantalla();
+        } while(totalEncerts < paraula.length() && totalErrors < MAXINTENTS);
+       
+        if (totalErrors == 8){
+            mostrarEstatPenjat(estatPenjat);
+            System.out.print("Paraula: ");
+            mostrarParaula(paraula,lletresEncertades);
+            System.out.print("Lletres: ");
+            mostrarLletresIntroduides(lletres);
+            System.out.println("OOOOOoooohhhh! Has perdut!!");
+            System.out.println("La paraula secreta era: " + paraula);
         }
-        
+        else if (totalEncerts == paraula.length()){
+            System.out.println("Enhorabona, has guanyat! La paraula era: " + paraula);
+        }
     }
     
     static void inicialitzarEstatPenjat(char[][] estatPenjatIni, char[][] estat) {

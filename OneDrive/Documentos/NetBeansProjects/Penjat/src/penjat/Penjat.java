@@ -102,11 +102,23 @@ public static void main(String[] args) {
     
     static void mostrarParaula(String paraula, boolean[] encertades) {
         
-        System.out.println("Paraula: " + paraula);
+       for (int i = 0; i < paraula.length(); i++){
+            if (encertades[i] == true){
+                System.out.print(paraula.charAt(i));
+            }
+            else{
+                System.out.print("*");
+            }
+        }
+        System.out.println("");
         
     }
     
     static void mostrarLletresIntroduides(String lletres) {
+         for (int i = 0; i < lletres.length(); i++){
+            System.out.print(lletres.charAt(i));
+        }
+        System.out.println("");
         
     }
     
